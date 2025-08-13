@@ -1,17 +1,7 @@
-#Providers are meant to connect to the cloud offering of choice. I will be using aws.
+resource "aws_s3_bucket" "myTfBucket" {
+  bucket = "vr-bucket-static-site"
 
-terraform {
-  required_providers {
-    aws ={
-        source = "hashicorp/aws"
-        version = "~> 5.92"
-    }
+  tags = {
+    Name        = "My bucket"
   }
-  required_version = ">= 1.2"
-}
-
-provider "aws" {
-    region = "${var.us-east-1}"
-    access_key = "${var.aws_access_key}"
-    secret_key = "${var.aws_access_secret}"
 }
