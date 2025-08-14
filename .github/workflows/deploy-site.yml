@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-    -  '../site/**'
+    -  '/site/**'
     -  '.github/workflows/deploy-site.yml'
 jobs:
   deploy:
@@ -23,14 +23,14 @@ jobs:
       # 1) Sync everything except index.html (kept separate to control caching)
       - name: Sync static assets (css/js/images)
         run: |
-          aws s3 sync ../site s3://${{ secrets.S3_BUCKET }} \
+          aws s3 sync ./site s3://${{ secrets.S3_BUCKET }} \
             --exclude "index.html" \
             --delete
   
       # 2) Upload index.html with no-cache so browsers always fetch the latest
       - name: Upload index.html (no-cache)
         run: |
-          aws s3 cp ../site/index.html s3://${{ secrets.S3_BUCKET }}/index.html \
+          aws s3 cp ./site/index.html s3://${{ secrets.S3_BUCKET }}/index.html \
             --cache-control "no-cache, no-store, must-revalidate" \
             --content-type "text/html; charset=utf-8"
 
