@@ -15,10 +15,10 @@ resource "aws_s3_bucket_ownership_controls" "myTfBucket" {
 //This flips the safety switches so people on the internet can look inside (read files) if you say so.
 resource "aws_s3_bucket_public_access_block" "myTfBucket" {
   bucket                  = aws_s3_bucket.myTfBucket.id
-  block_public_acls       = false
-  block_public_policy     = false
-  ignore_public_acls      = false
-  restrict_public_buckets = false
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
 
 //Tells the bucket its a web host pointing to the index and 404 of the site
@@ -42,11 +42,11 @@ data "aws_iam_policy_document" "public_read_my_bucket" {
   }
 }
 //attaches the permission slip to the bucket
-resource "aws_s3_bucket_policy" "myTfBucket" {
+/* resource "aws_s3_bucket_policy" "myTfBucket" {
     bucket = aws_s3_bucket.myTfBucket.id
     policy = data.aws_iam_policy_document.public_read_my_bucket.json
     depends_on = [aws_s3_bucket_public_access_block.myTfBucket]
-}
+} *///We are removing this so that only cloudfront will be able to access.
 
 //readonly variables called local
 locals {

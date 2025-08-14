@@ -16,3 +16,29 @@ Todo:
     Have my website be accessible through https using CloudFront.
     Point my url vasiliyrodin.com to this site through route 53.
     Add some javascript that counts how many time the page has been accessed (for now just display it in the terminal)
+
+
+HTTPS Through cloudfront.
+    I have to terminate public access to the s3 bucket.
+    Only allow cloudfront to access the bucket.
+    Run everything through cloudfront.
+
+    What I had to do to get it working manually through console.
+    Bucket -> Permissions -> Turn off all 4 public access
+           -> Properties -> Turn off static webhosting
+
+    CloudFront
+            -> Create distribution
+                ->Point to s3 origin
+                ->Leave origin path
+                ->Use recommended settings (Redirect HTTP to HTTPS)
+                ->Allow private s3 bucket access
+                
+            -> Once created
+                ->General Settings -> root object -> index.html
+                ->Origins
+                    ->Edit Origins
+                    ->Copy Policy
+                    ->Add it the buckets s3 permissions
+    Now I need to do this in Terraform.
+    
