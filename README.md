@@ -23,9 +23,11 @@ HTTPS Through cloudfront.
 
     What I had to do to get it working manually through console.
     Bucket -> Permissions -> Turn off all 4 public access
-           -> Properties -> Turn off static webhosting
+           -> Properties -> Turn off static web hosting
 
 What I learned deploying this with terraform.
     It is not easy. So many configs to worry about that don't show up in the documentation.
     You can create the origin access (OAC) first. And assign it later (When creating this in the console you can create it on the spot and assign it)
-    
+
+Adding a route 53 hosted zone was not difficult
+    creating a hosted zone with my vasiliyrodin.com url I was able to view tf output and add my ns servers to my domain provider. Now I need hook my cloudfront to use that URL. 
