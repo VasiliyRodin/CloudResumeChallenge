@@ -19,7 +19,7 @@ resource "aws_cloudfront_distribution" "my-site-cf" {
         viewer_protocol_policy = "redirect-to-https"
         allowed_methods = ["GET","HEAD"]
         cached_methods = ["GET","HEAD"]
-        cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6" 
+        cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6" //It’s the official managed policy for static sites
     }
     price_class = "PriceClass_100"
     # --- The cert that we use default for now
