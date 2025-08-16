@@ -30,4 +30,9 @@ What I learned deploying this with terraform.
     You can create the origin access (OAC) first. And assign it later (When creating this in the console you can create it on the spot and assign it)
 
 Adding a route 53 hosted zone was not difficult
-    creating a hosted zone with my vasiliyrodin.com url I was able to view tf output and add my ns servers to my domain provider. Now I need hook my cloudfront to use that URL. 
+    creating a hosted zone with my vasiliyrodin.com url I was able to view tf output and add my ns servers to my domain provider. Now I need hook my cloudfront to use that URL.
+Creating a certificate for my dns.
+    I need to first create a dns certificate in tf it is aws_acm_certificate
+    Validate the certificate with route 53. By assigning it to your dns record.
+    Attach the certificate to your cloudfront under viewer certificate. and your alternate domain name
+    Create am  A record in the route53 pointing to your cloud front distribution.

@@ -5,7 +5,7 @@ resource "aws_cloudfront_origin_access_control" "my-site-cf-oac" {
     signing_protocol                    = "sigv4"
 }
 resource "aws_cloudfront_distribution" "my-site-cf" {
-    aliases = "vasiliyrodin.com"
+    aliases = [ "vasiliyrodin.com" ]
     enabled             = true
     default_root_object = "index.html"
     # --- Define the origin (where CloudFront fetches content) ---
