@@ -5,6 +5,7 @@ resource "aws_cloudfront_origin_access_control" "my-site-cf-oac" {
     signing_protocol                    = "sigv4"
 }
 resource "aws_cloudfront_distribution" "my-site-cf" {
+    aliases = "vasiliyrodin.com"
     enabled             = true
     default_root_object = "index.html"
     # --- Define the origin (where CloudFront fetches content) ---
@@ -24,7 +25,10 @@ resource "aws_cloudfront_distribution" "my-site-cf" {
     price_class = "PriceClass_100"
     # --- The cert that we use default for now
     viewer_certificate {
-        cloudfront_default_certificate = true
+        //cloudfront_default_certificate = true
+        acm_certificate_arn      = aws_acm_certificate.myCert.arn
+        ssl_support_method       = "sni-only"
+        minimum_protocol_version = "TLSv1.2_2021"
     }
     # --- No geo restrictions ---
     restrictions {
@@ -35,7 +39,7 @@ resource "aws_cloudfront_distribution" "my-site-cf" {
 }
 
 data "aws_caller_identity" "current" {}
-
+//assigns the s3 bucket with the permission for cloudfront to access it and get objects.
 resource "aws_s3_bucket_policy" "my-site-s3-policy" {
   bucket = aws_s3_bucket.myBucket.id
     policy = jsonencode({
