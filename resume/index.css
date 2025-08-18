@@ -7,8 +7,9 @@ html{
 body{
     display: flex;
     flex-direction: column;
-    padding: 3px;
+    padding: 20px;
     background-color: #e5e7eb;
+    border-radius: 5%;
 }
 
 .title{
