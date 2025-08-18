@@ -4,7 +4,15 @@ resource "aws_cloudfront_origin_access_control" "my-site-cf-oac" {
     signing_behavior                    = "always"
     signing_protocol                    = "sigv4"
 }
+
+data "aws_acm_certificate" "issued" {
+  domain      = "vasiliyrodin.com"
+  statuses    = ["ISSUED"]
+  most_recent = true
+}
+
 resource "aws_cloudfront_distribution" "my-site-cf" {
+    depends_on = [ aws_acm_certificate_validation.myCertValidation ]
     aliases = [ "vasiliyrodin.com" ]
     enabled             = true
     default_root_object = "index.html"
@@ -26,7 +34,7 @@ resource "aws_cloudfront_distribution" "my-site-cf" {
     # --- The cert that we use default for now
     viewer_certificate {
         //cloudfront_default_certificate = true
-        acm_certificate_arn      = aws_acm_certificate.myCert.arn
+        acm_certificate_arn      = data.aws_acm_certificate.issued.arn
         ssl_support_method       = "sni-only"
         minimum_protocol_version = "TLSv1.2_2021"
     }
