@@ -7,10 +7,11 @@
 This project has exposed me to modern cicd practices. Creating my own pipelines for code deployment, deploying a static website through automation. <br>
 
 Steps Completed:<br>
+    1.Get Cloud Certified(Still working on it)<br>
     2.HTML- create an html website.<br>
     3.Add css to the website<br>
     4.Host the website in s3(did it with terraform and github actions to update the bucket with my site files)<br>
-    5.Enable https using cloud front(first manually then with terraform)
+    5.Enable https using cloud front(first manually then with terraform)<br>
 Todo:<br>
     Create terraform workflow so that I don't have to manually apply terraform configs.<br>
     Point my url vasiliyrodin.com to this site through route 53.<br>
