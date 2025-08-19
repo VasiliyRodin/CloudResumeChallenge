@@ -1,10 +1,10 @@
 # CloudResumeChallenge
 
-#Vasiliy Rodin Devops Resume Challenge:<br>
-##Following the work steps from: <br>
-##https://cloudresumechallenge.dev/docs/the-challenge/aws/<br>
+# Vasiliy Rodin Devops Resume Challenge:<br>
+## Following the work steps from: <br>
+## https://cloudresumechallenge.dev/docs/the-challenge/aws/<br>
 
-This project has exposed me to modern cicd practices. Creating my own pipelines for code deployment, deploying a static website through automation. 
+This project has exposed me to modern cicd practices. Creating my own pipelines for code deployment, deploying a static website through automation. <br>
 
 Steps Completed:<br>
     2.HTML- create an html website.<br>
@@ -12,11 +12,11 @@ Steps Completed:<br>
     4.Host the website in s3(did it with terraform and github actions to update the bucket with my site files)<br>
     5.Enable https using cloud front(first manually then with terraform)
 Todo:<br>
-    Create terraform workflow so that I don't have to manually apply terraform configs.
-    Point my url vasiliyrodin.com to this site through route 53.
-    Add some javascript that counts how many time the page has been accessed (for now just display it in the terminal)
+    Create terraform workflow so that I don't have to manually apply terraform configs.<br>
+    Point my url vasiliyrodin.com to this site through route 53.<br>
+    Add some javascript that counts how many time the page has been accessed (for now just display it in the terminal)<br>
 
-HTTPS Through cloudfront.
+HTTPS Through cloudfront.<br>
     I have to terminate public access to the s3 bucket.
     Only allow cloudfront to access the bucket.
     Run everything through cloudfront.
