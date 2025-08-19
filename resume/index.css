@@ -7,11 +7,17 @@ html{
 body{
     display: flex;
     flex-direction: column;
+}
+.body{
     padding: 20px;
     background-color: #e5e7eb;
     border-radius: 5%;
 }
-
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .title{
     display: flex;
     justify-content: space-between;
