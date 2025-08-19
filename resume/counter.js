@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded',()=>{
     let ele = document.getElementById('visit_count');
     let current = localStorage.getItem('visit_counter') ?? 0; // Nullish coalescing
-/*     if(Number(isFinite(current)){
+    /*     if(Number(isFinite(current)){
         next = Number(current)+ 1;
     }else{
         next = 1;
