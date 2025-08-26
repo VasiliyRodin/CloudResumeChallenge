@@ -33,4 +33,7 @@ Creating a certificate for my dns.<br>
 I need to first create a dns certificate in tf it is aws_acm_certificate.<br>
 Validate the certificate with route 53. By assigning it to your dns record.<br>
 Attach the certificate to your cloudfront under viewer certificate and the alternate domain name(vasiliyrodin.com)<br>
-Create am  A record in the route53 pointing to your cloud front distribution.<br>
+Create an A record in the route53 pointing to your cloud front distribution.<br>
+
+This is my current setup.
+![alt text](images/9a7f1e65-2c46-4761-8552-0d442a370944.png)
