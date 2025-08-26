@@ -1,14 +1,21 @@
-// run some code that sends and gathers info
-(async function bumpAndShow() { //async allows you to use await
-  try {
-    const res = await fetch("https://xr5fwzutcc.execute-api.us-east-1.amazonaws.com/prod/hit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: "{}"
-    });//sends the empty {} request to the api gateway endpoint. await waits for the response back. 
-    const data = await res.json();// reads the response and parses it as json
-    document.getElementById("visit_count").textContent = data.total_views ?? "—"; // if null show -
-  } catch (e) {
-    console.error("view counter failed:", e);
-  }
-})();//the ending () invokes the function immediately.
+(async function bumpAndShowUnique(){
+    try{
+        const element = document.getElementById('visit_count');
+        if (!element) return;
+        const base = 'https://xr5fwzutcc.execute-api.us-east-1.amazonaws.com/prod';
+        const seen = localStorage.getItem("vr-site-seen")// on the first run through this is false.
+        const response = await fetch(`${base}\hit`, seen //fetch takes the url(required) and an option variable which here is being determined but the if seen is true
+            ? {method: "GET"}
+            : {
+                method: "POST",
+                headers: {"Content-Type":"application/json"},
+                body: "{}"
+            }
+        )
+        const data = await response.json()// wait for the response above, expect json.
+        element.textContent = Number(data.total_views ?? 0);
+        if(!seen) localStorage.setItem("vr-site-seen","1");        
+    }catch(e){
+        console.log("view count didn't work",e);
+    }
+})();
