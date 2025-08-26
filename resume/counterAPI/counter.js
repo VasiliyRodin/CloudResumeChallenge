@@ -13,7 +13,7 @@
             }
         )
         const data = await response.json()// wait for the response above, expect json.
-        element.textContent = data.total_views ?? 0;
+        element.textContent = Number(data.total_views ?? 0);
         if(!seen) localStorage.setItem("vr-site-seen","1");        
     }catch(e){
         console.log("view count didn't work",e);
