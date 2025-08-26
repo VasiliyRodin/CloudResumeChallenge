@@ -7,7 +7,7 @@
       body: "{}"
     });//sends the empty {} request to the api gateway endpoint. await waits for the response back. 
     const data = await res.json();// reads the response and parses it as json
-    document.getElementById("visit_counter").textContent = data.total_views ?? "—"; // if null show -
+    document.getElementById("visit_count").textContent = data.total_views ?? "—"; // if null show -
   } catch (e) {
     console.error("view counter failed:", e);
   }
