@@ -7,33 +7,36 @@
         <script defer src="counterAPI/counter.js"></script>
     </head>
     <body>
-        <div class="body">
-            <div class="title">
+        <div class="content">
+            <div class="header">
                 <h1>Vasiliy Rodin</h1>
                 <h4>Milpitas Ca | vasiliyrodin1@gmail.com</h4>
             </div>
-            
+            <div class="links">
+                <a href="https://www.linkedin.com/in/vasiliyrodin/">Linkedin</a>
+                <a href="https://github.com/VasiliyRodin">Github</a>
+            </div>
             <div class="summary">
-                <h4 class="sectionTitle">Summary</h4>
-                <p>Systems Administrator and Cloud Infrastructure Engineer with 8+ years of experience administering, configuring, and maintaining enterprise IT environments across AWS, VMware, and hybrid data centers. Proven expertise in Office 365 administration, system integration (SSO, LMS, endpoint management), and infrastructure optimization. Adept at troubleshooting, documentation, and crossfunctional collaboration to ensure high availability, performance, and security of IT systems.</p>
+                <h4 class="title">Summary</h4>
+                    <p>Systems Administrator and Cloud Infrastructure Engineer with 8+ years of experience administering, configuring, and maintaining enter-prise IT environments across AWS, VMware, and hybrid data centers. Expertise in Office 365 administration, system integration (SSO, LMS, endpoint management), and infrastructure optimization. Adept at troubleshooting, documentation, and cross-functional collaboration to ensure high availability, performance, and security of IT systems. Eager to use my experience to contribute towards organizational success, with a strong commitment to ongoing career development.</p>
                 <hr />
             </div>
-            <div class="content">
+
+            <div class="container">
                 <div class="certifications">
-                    <h4 class="sectionTitle">Certifications</h4>
+                    <h4 class="title">Certifications</h4>
                     <ul class="sectionItems">
                         <li>Certified Kubernetes Administrator (CKA): ID: LF-7ksn5y3205</li>
                     </ul>
                     <hr />
                 </div>
-    
                 <div class="workExperience">
-                    <h4>Work Experience</h4>
-                    <div class="job1">
+                    <h4 class="title">Work Experience</h4>
+                    <div class="job4">
                         <div class="sectionTitle">
                             <p>Centric Software</p>
                             <p>Cloud Operations Engineer</p>
-                            <p>2022-2025</p>
+                            <p>Dec 2022 - May 2025</p>
                         </div>
                         <ul class = "sectionItems">
                             <li>Led incident response and triage for customer environments hosted in GCP, AWS, and Azure, resolving critical production issues with minimal downtime.</li>
@@ -45,12 +48,11 @@
                             <li>Collaborated with cross-functional teams(Engineering, QA, Support, Customer Success) to successfully plan and execute environment rollouts, upgrades, and recovery processes, enhancing system reliability and reducing downtime.</li>
                         </ul>
                     </div>
-                </div>
-                <div class="job2">
+                    <div class="job3">
                         <div class="sectionTitle">
                             <p>Barracuda Networks</p>
                             <p>SRE</p>
-                            <p>2021-2022</p>
+                            <p>Oct 2021 - July 2022</p>
                         </div>
                         <ul class = "sectionItems">
                             <li>Deployed and managed Azure infrastructure using Terraform and Azure DevOps Pipelines, improving deployment efficiency and reducing downtime.</li>
@@ -59,9 +61,53 @@
                             <li>Collaborated on cluster monitoring and visualization through Grafana and alerting policies, leading to improved system performance and faster issue resolution.</li>
                         </ul>
                     </div>
+                    <div class="job2">
+                        <div class="sectionTitle">
+                            <p>Centric Software</p>
+                            <p>Cloud Support Engineer</p>
+                            <p>Jan 2015 - Oct 2021</p>
+                        </div>
+                        <ul class="sectionItems">
+                            <li>Developed the company's first customer-facing cloud deployment stack by learning AWS, increasing deployment speed and enhancing our market position. </li>
+                            <li>Built reusable infrastructure templates for EC2, RDS, and Route 53-backed environments, streamlining deployment processes.</li>
+                            <li>Delivered direct customer support and live incident recovery for cloud and on-prem deployments.</li>
+                            <li>Authored internal documentation, reducing support overhead and improving response consistency.</li>
+                            <li>Deployed microservice environments with Rancher 1.0 for production and Portainer for development, enhancing scalability and development efficiency.</li>
+                            <li>Investigated Kafka messaging failures and restored broken pipelines through container-level recovery, ensuring uninterrupted data flow and system reliability.</li>
+                            <li>Automated infrastructure tasks using Python (Boto3) and Bash scripting, reducing provisioning time and improving deployment efficiency.</li>
+                        </ul>
+                    </div>
+                    <div class="job1">
+                        <div class="sectionTitle">
+                            <p>ReServe Interactive</p>
+                            <p>Customer Technical Support</p>
+                            <p>Aug 2013 - Dec 2014</p>
+                        </div>
+                        <ul class="sectionItems">
+                            <li>Delivered technical support via phone, remote sessions, and ticket systems utilizing Salesforce CRM.</li>
+                            <li>Achieved a 4.9/5 satisfaction score by resolving software issues and training users.</li>
+                            <li>Conducted QA testing and worked with developers to improve product feedback loops.</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr />
+                <div class="projects">
+                    <h4 class="title">Projects</h4>
+                    <div class="sectionTitle">
+                        <p>Cloud Portfolio</p>
+                        <p>Personal Website(<a href=https://vasiliyrodin.com>vasiliyrodin.com</a>)</p>
+                        <p>May 2025 - Present</p>
+                    </div>
+                    <ul class="sectionItems">
+                        <li>Designed and deployed a static website hosted on AWS S3 with CloudFront distribution for global, HTTPS-enabled access.</li>
+                        <li>Configured custom domain integration using Route53 and ACM TLS certificates with DNS validation.</li>
+                        <li>Automated infrastructure provisioning with Terraform, including bucket policies, CloudFront OAC, and Route53 records.</li>
+                        <li>Built a CI/CD pipeline with GitHub Actions to sync site updates to S3 and trigger CloudFront cache invalidations, reducing deployment friction. </li>
+                        <li>Developed a serverless visitor counter using API Gateway, and DynamoDB; integrated with front-end JavaScript for live page view tracking. </li>
+                        <li>Implemented and troubleshot IAM permissions, CORS policies, and CloudFront caching issues, gaining hands-on experience with real-world cloud challenges.</li>
+                    </ul>
                 </div>
             </div>
-    
         </div>        
         <div class="footer">
             <p>Page Visit Count:</p><span id="visit_count"></span>

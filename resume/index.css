@@ -8,24 +8,36 @@ body{
     display: flex;
     flex-direction: column;
 }
-.body{
-    padding: 20px;
+.content{
     background-color: #e5e7eb;
     border-radius: 5%;
+    padding: 20px;
+}
+.header, .links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title{
+    font-size: large;
+    margin-bottom: auto;
+}
+.workExperience{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+}   
+.sectionTitle{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.sectionItems{
+    margin-top:auto;
+    font-size:17px;
 }
 .footer{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.sectionTitle{
-    display: flex;
-    justify-content: space-between;
-    font-size: larger;
 }
